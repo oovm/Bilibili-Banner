@@ -1,0 +1,9 @@
+# IDE
+.idea/
+.vscode/
+
+# Wolfram
+*.nb
+
+# Data
+banner/*
