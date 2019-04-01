@@ -1,0 +1,1 @@
+https://github.com/Moe-Net/BilibiliLink/issues/1

@@ -22,8 +22,17 @@ formatter[dict_] := Block[
 		"Logo" -> logo
 	]
 ];
+additional = Quiet@<|
+	"CheckDate" -> #CheckDate,
+	"Title" -> Lookup[#, "Title"],
+	"Background" -> Lookup[#, "Background"],
+	"Logo" -> Lookup[#, "Logo"]
+|>&;
 
 
-json = Import["Scripts/banner.json", "RawJSON"];
-data = DeleteDuplicatesBy[formatter /@ json, {#Background, #Logo}&];
+data = Flatten@{
+	formatter /@ Import["Scripts/banner.json", "RawJSON"],
+	additional /@ Import["Database/Additional.json", "RawJson"]
+};
+data = DeleteDuplicatesBy[ReverseSort@data, {#Background, #Logo}&];
 Export["Banner.csv", Dataset[data /. Missing[___] :> ""]]

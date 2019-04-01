@@ -1,0 +1,3 @@
+*.csv linguist-language=rust
+*.json linguist-language=julia
+*.md linguist-language=mercury
