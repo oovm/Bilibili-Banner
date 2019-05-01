@@ -6,5 +6,6 @@
 *.nb
 
 # Data
+logo/*
 banner/*
-scripts/banner.json
+Scripts/banner.*

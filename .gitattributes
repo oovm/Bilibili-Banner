@@ -1,3 +1,4 @@
 *.csv linguist-language=rust
 *.json linguist-language=julia
+.git* linguist-language=mercury
 *.md linguist-language=mercury
